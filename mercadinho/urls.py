@@ -5,5 +5,6 @@ from . import views
 app_name = "Mercadinho"
 
 urlpatterns = [
-    path("",views.IndexView.as_view(), name="index")
+    path("",views.IndexView.as_view(), name="index"),
+    path("<int:product_id>/",views.DetailView.as_view(), name="detail")
 ]
