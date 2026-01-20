@@ -5,7 +5,5 @@ class Product(models.Model):
     id = models.AutoField(primary_key=True)
     nameProduct = models.CharField(max_length=255)
     quantity = models.IntegerField()
-    productPhoto = models.ImageField()
+    productPhoto = models.ImageField(upload_to="mercadinho/media")
 
-    imageUpload = models.ImageField.storage()
-    
