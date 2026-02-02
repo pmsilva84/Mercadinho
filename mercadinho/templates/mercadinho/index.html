@@ -6,8 +6,19 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Olá Mundo</h1>
-    <p>Tentando aprender Django</p>
-    <p>{{ test }}</p>
+    <h1>Mercadinho</h1>
+    <h4>Site criado por </h4>
+    
+    <div style="border-style: dashed;" title="Produtos">
+        
+        {%if products_label%}
+            {% for product in products_label%}
+                <div>
+                    <img src="{{ Product.productPhoto }}" alt="{{ Product.productPhoto }}">
+                    <h5><a href="">{{Product.nameProduct}}</a></h5>
+                </div>
+            {%endfor%}
+        {%endif%}
+    </div>
 </body>
 </html>

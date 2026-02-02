@@ -4,16 +4,13 @@ from .models import Product
 # Create your views here.
 
 class IndexView(generic.ListView):
-    
     template_name = "mercadinho/index.html"
+    context_object_name = "products_label"
 
     def get_queryset(self):
-        return []
+        return Product.objects.all()
     
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['test'] = 'saitama'  # Adicionando a variável ao contexto
-        return context
+    
 
 class DetailView(generic.DetailView):
     model = Product
